@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e03ad9fd-e905-4b2b-a0ba-bcf97b80172c" name="Default Changelist" comment="" />
+    <list default="true" id="e03ad9fd-e905-4b2b-a0ba-bcf97b80172c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/HolaMundo/app/src/main/res/drawable/boton.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HolaMundo/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HolaMundo/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HolaMundo/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HolaMundo/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HolaMundo/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HolaMundo/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HolaMundo/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HolaMundo/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HolaMundo/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HolaMundo/app/src/main/res/values/themes.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
