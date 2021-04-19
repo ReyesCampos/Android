@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titulos">25sp</dimen>
+    <dimen name="subtitulos">20sp</dimen>
+    <dimen name="nom">15sp</dimen>
+    <dimen name="ham">10sp</dimen>
+</resources>
