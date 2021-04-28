@@ -11,6 +11,7 @@ import android.view.MenuItem
 import com.example.covid.ui.main.SectionsPagerAdapter
 
 class Tabs : AppCompatActivity() {
+    lateinit var tabs:TabLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,8 +19,14 @@ class Tabs : AppCompatActivity() {
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = findViewById(R.id.tabs)
+        tabs = findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)
-
+        cargarIconos()
     }
+
+    fun cargarIconos (){
+        tabs.getTabAt(0)?.setIcon(android.R.drawable.ic_dialog_dialer)
+        tabs.getTabAt(1)?.setIcon(android.R.drawable.ic_dialog_map)
+    }
+
 }
