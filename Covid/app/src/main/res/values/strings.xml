@@ -6,7 +6,8 @@
     <string name="conciente">Aprende la conciencia</string>
     <string name="sintomas">5 Síntomas del Covid</string>
     <string name="leer">Leer Más</string>
-
+    <string name="top">Top Países</string>
+    <string name="fav">Favoritos</string>
     <string name="todo">TODO</string>
     <string name="title_activity_tabs">Tabs</string>
     <string name="tab_text_1">Tab 1</string>

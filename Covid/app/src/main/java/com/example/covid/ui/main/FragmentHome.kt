@@ -5,7 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.covid.R
+import com.example.covid.adapters.AdapterFavorito
+import com.example.covid.adapters.AdapterPais
+import com.example.covid.models.Favorito
+import com.example.covid.models.Pais
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +41,31 @@ class FragmentHome : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        var view = inflater.inflate(R.layout.fragment_home, container, false)
+        var recyclerView= view.findViewById<RecyclerView>(R.id.recyclerViewPaises)
+        recyclerView.layoutManager=LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
+        var paises=ArrayList<Pais>()
+        paises.add(Pais("México", "mexicon.png", 120.00))
+        paises.add(Pais("EUA", "mexicon.png", 120.00))
+        paises.add(Pais("Japón", "mexicon.png", 120.00))
+        paises.add(Pais("Corea", "mexicon.png", 120.00))
+        paises.add(Pais("Brasil", "mexicon.png", 120.00))
+        var adapter = AdapterPais(paises)
+        recyclerView.adapter = adapter
+
+        var recyclerViewFav = view.findViewById<RecyclerView>(R.id.recycleViewFavoritos)
+        recyclerViewFav.layoutManager=LinearLayoutManager(view.context, LinearLayoutManager.HORIZONTAL, false)
+        var favoritos=ArrayList<Favorito>()
+        favoritos.add(Favorito("Egipto"))
+        favoritos.add(Favorito("Inglaterra"))
+        favoritos.add(Favorito("Hungría"))
+        favoritos.add(Favorito("Noruega"))
+        favoritos.add(Favorito("Canadá"))
+        favoritos.add(Favorito("Argentina"))
+        var adapterFav = AdapterFavorito(favoritos)
+        recyclerViewFav.adapter = adapterFav
+
+        return view
     }
 
     companion object {
