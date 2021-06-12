@@ -1,6 +1,7 @@
 package com.example.covid.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.covid.R
 import com.example.covid.adapters.AdapterFavorito
 import com.example.covid.adapters.AdapterPais
+import com.example.covid.conexion.Conexion
 import com.example.covid.models.Favorito
 import com.example.covid.models.Pais
 
@@ -42,6 +44,12 @@ class FragmentHome : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        var conexion = Conexion(view.context)
+        var db = conexion.writableDatabase
+        //db.execSQL("insert into favoritos (nombre, imagen) values ('China', 'bandera.png')")
+        //db.execSQL("insert into favoritos (nombre, imagen) values ('Mexico', 'bandera.png')")
+
         var recyclerView= view.findViewById<RecyclerView>(R.id.recyclerViewPaises)
         recyclerView.layoutManager=LinearLayoutManager(view.context, LinearLayoutManager.VERTICAL, false)
         var paises=ArrayList<Pais>()
@@ -56,12 +64,17 @@ class FragmentHome : Fragment() {
         var recyclerViewFav = view.findViewById<RecyclerView>(R.id.recycleViewFavoritos)
         recyclerViewFav.layoutManager=LinearLayoutManager(view.context, LinearLayoutManager.HORIZONTAL, false)
         var favoritos=ArrayList<Favorito>()
-        favoritos.add(Favorito("Egipto"))
-        favoritos.add(Favorito("Inglaterra"))
-        favoritos.add(Favorito("Hungría"))
-        favoritos.add(Favorito("Noruega"))
-        favoritos.add(Favorito("Canadá"))
-        favoritos.add(Favorito("Argentina"))
+        var respuesta = db.rawQuery("select * from favoritos", null)
+        if(respuesta.moveToFirst()){
+
+            do {
+                favoritos.add(Favorito(respuesta.getString(1)))
+                Log.e("DATO", respuesta.getString(1))
+            }while (respuesta.moveToNext())
+        }else{
+            Log.e("DATO", "SIN DATOS")
+        }
+
         var adapterFav = AdapterFavorito(favoritos)
         recyclerViewFav.adapter = adapterFav
 
