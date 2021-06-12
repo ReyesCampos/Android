@@ -16,6 +16,9 @@ class Tabs : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tabs)
+        setSupportActionBar(findViewById(R.id.toolbar))
+        supportActionBar?.setLogo(R.drawable.dollarcito)
+        supportActionBar?.setTitle(R.string.app_name)
 
         val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
         val viewPager: ViewPager = findViewById(R.id.view_pager)

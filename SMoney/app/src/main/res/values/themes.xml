@@ -19,6 +19,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
     <style name="Theme.SMoney.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.SMoney.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

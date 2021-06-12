@@ -15,16 +15,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        username = findViewById(R.id.nickname)
-        pass = findViewById(R.id.pass)
         btnLogin = findViewById(R.id.btnLogin)
+        btnLogin.setOnClickListener {
 
-        login(username.text.toString(), pass.text.toString())
-    }
+                startActivity(Intent(this, Tabs::class.java))
 
-    fun login(user:String, pass:String){
-
-            btnLogin.setOnClickListener { startActivity(Intent(this, Tabs::class.java)) }
+        }
 
     }
 
